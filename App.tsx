@@ -1,14 +1,10 @@
 import React from 'react';
-import {Archivo_400Regular, Archivo_500Medium, Archivo_600SemiBold, useFonts} from "@expo-google-fonts/archivo"
-import {Inter_400Regular, Inter_500Medium} from "@expo-google-fonts/inter"
-import {Home} from "./src/screens/Home";
+import { Archivo_400Regular, Archivo_500Medium, Archivo_600SemiBold, useFonts } from "@expo-google-fonts/archivo"
+import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter"
 import AppLoading from "expo-app-loading";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 import theme from "./src/styles/theme";
-import {CarDetails} from "./src/screens/CarDetails";
-import { Scheduling } from './src/screens/Scheduling';
-import { SchedulingDetails } from './src/screens/SchedulingDetails';
-import { SchedulingComplete } from './src/screens/SchedulingComplete';
+import { Routes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,12 +12,12 @@ export default function App() {
   })
 
   if (!fontsLoaded) {
-    return <AppLoading/>
+    return <AppLoading />
   }
 
   return (
     <ThemeProvider theme={theme}>
-      <SchedulingComplete/>
+      <Routes />
     </ThemeProvider>
   );
 }
