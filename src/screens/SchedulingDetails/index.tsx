@@ -47,10 +47,14 @@ export function SchedulingDetails() {
       navigation.navigate('SchedulingComplete')
     }
 
+    function handleBack() {
+      navigation.goBack()
+    }
+
     return (
         <Container>
             <Header>
-              <BackButton onPress={() => {}}/>
+              <BackButton onPress={handleBack}/>
             </Header>
             <CarImages>
                 <ImageSlider imagesUrl={[ 'https://s2.glbimg.com/nvjFq8VRjyrpdQqaOeywz-5DFwY=/e.glbimg.com/og/ed/f/original/2021/08/27/captura_de_tela_2021-08-27_as_11.01.15.png' ]}/>
